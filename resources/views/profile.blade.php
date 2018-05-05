@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-@endsection@extends('layouts.app')
+@endsection
 
 @section('content')
     <div class="container">
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-@endsection@extends('layouts.app')
+@endsection
 
 @section('content')
     <div class="container">
@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-@endsection@extends('layouts.app')
+@endsection
 
 @section('content')
     <div class="container">
