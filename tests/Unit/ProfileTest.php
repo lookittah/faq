@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\User;
 use App\Profile;
+
 class profileTest extends TestCase
 {
     /**
@@ -22,6 +23,7 @@ class profileTest extends TestCase
         $profile->user()->associate($user);
         $this->assertTrue($profile->save());
     }
+
     public function testDeleteCascade()
     {
         $user = $user = factory(\App\User::class)->make();
@@ -29,22 +31,15 @@ class profileTest extends TestCase
         $profile = factory(\App\Profile::class)->make();
         $profile->user()->associate($user);
         $this->assertTrue($profile->save());
-
-
-
-
         $prof = \App\Profile::find($profile->id);
-
         $this->assertNotNull($prof);
 
 
-        $isdeleted=\App\User::find($user->id)->delete();
+        $isdeleted = \App\User::find($user->id)->delete();
         $this->assertTrue($isdeleted);
         $prof = \App\Profile::find($profile->id);
 
         $this->assertNull($prof);
-
-
 
 
     }
